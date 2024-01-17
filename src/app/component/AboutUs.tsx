@@ -3,7 +3,7 @@
 export default function AboutUs(){
     return(
         <div className="AboutUs-container" id="TentangKami">
-            <div className="container">
+            <div className="container AU-container">
                 <div className="AU-company">
                     <div className="company-logo">
                         <img src="/Image/logo.png" id="AU-company-logo"/>
@@ -44,6 +44,7 @@ export default function AboutUs(){
                     </div>
                 </div>
                 <div className="benefit">
+                <div className="benefit-line1"></div>
                 <div className="benefit-box">
                         <img src="/Simbol/Benefit/Food.png" id="benefit-logo"/>
                         <div className="benefit-text">

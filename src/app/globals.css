@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @font-face {
 font-family: 'Libre';
 src: url('/Font/LibreFranklin-Regular.ttf') format('truetype');
@@ -234,14 +239,19 @@ body .nav-link:hover {
   border: 1px solid white;
 }
 
+.benefit-line1{
+  border: 0px;
+}
+
 /* Destinasi CSS */
+
 .destinasi-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: start;
   align-items: center;
-  padding: 100px
+  padding: 100px;
 }
 
 .destinasi-title {
@@ -250,6 +260,7 @@ body .nav-link:hover {
   font-size: 40px;
   line-height: normal;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .destinasi-btn {
@@ -293,6 +304,7 @@ li {
 
 .swiper {
   width: 100%;
+  height: 729px;
 }
 
 .swiper-slide {
@@ -350,6 +362,12 @@ li {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.inex-div {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }
 
 .keberangkatan {
@@ -449,6 +467,13 @@ li {
   justify-content: center;
 }
 
+.umrah-line1 {
+  height: 200px;
+  border: 1px solid #0A4879;
+  display: flex;
+  justify-content: center;
+}
+
 .umrah-paket {
   margin-top: 30px;
   display: flex;
@@ -472,6 +497,13 @@ li {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+}
+
+.paket-div1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
 }
 
 .paket-box {
@@ -546,33 +578,56 @@ li {
 
 /* Testimoni css */
 
+.Testimoni-containter {
+  padding-top: 80px;
+}
+
 .testi-div{
-  height: 800px;
+  height: 900px;
   display: flex;
   flex-direction: row;
-  padding: 50px 0px 50px 0px;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0px 0px 50px 0px;
+  gap: 40px;
+}
+
+.testi1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.testi2 {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  gap: 40px;
+  align-items: start;
 }
 
 .testi-title {
-  max-width: 450px;
   color: #0A4879;
   font-family: 'LibreBold';
-  font-size: 96px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 700;
   line-height: 121.875%; /* 117px */
   letter-spacing: -1.92px;
   margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Contact */
 .Contact{
-  height: 800px;
+  height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('/Image/service.png'), lightgray -80px 0px / 111.111% 100% no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -580,8 +635,10 @@ li {
   gap: 50px;
 }
 
+.contact-title {
+}
+
 .ct1 {
-  width: 1080px;
   color: #FFF;
   text-align: center;
   font-family: 'LibreBold';
@@ -594,7 +651,7 @@ li {
 }
 
 .ct2{
-  width: 100%;
+  width: auto;
   color: #FFF;
   text-align: center;
   font-family: 'LibreBold';
@@ -608,7 +665,7 @@ li {
 }
 
 .ct2-text {
-  width: 800px;
+  width: auto;
   margin-bottom: 0;
 }
 
@@ -667,17 +724,16 @@ li {
 /* Footer CSS */
 .footer {
   width: 100%;
-  height: 450px;
   background: linear-gradient(180deg, #128099 0%, #0A4879 100%);
 }
 
 .footer-container {
   padding-top: 80px;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   padding-bottom: 10px;
+  gap: 80px;
 }
 
 .footer-content {
@@ -754,11 +810,77 @@ li {
 /* Media Queries */
 
 @media (max-width: 1400px) {
+  .paket-div {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  } 
 
+  .paket-div1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .swiper {
+    height: 627px;
+  }
+
+  .testi-div {
+    flex-direction: column-reverse;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .testi2 {
+    align-items: center;
+  }
+
+  .testi1 {
+    flex-direction: row;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 1200px) {
+  .AU-benefit {
+    height: auto;
+    flex-direction: row;
+  }
+  .benefit {
+    flex-direction: column;
+  }
+  .destinasi-container {
+    margin-top: 180px;
+  }
 
+  .AU-company {
+    flex-direction: row;
+    gap: 20px;
+  }
+  #AU-company-logo {
+    max-height: auto;
+  }
+
+  .swiper {
+    height: 527px;
+  }
+
+  .ct1 {
+    font-size: 58px;
+  }
+
+  .ct2 {
+    font-size: 48px;
+  }
+
+  .contact-btn {
+    width: 350px;
+    height: 80px;
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -769,10 +891,162 @@ li {
   .Landing-subhead {
     font-size: 28px ;
   }
+
+  #AU-company-logo {
+    height: auto;
+  }
+  
+  .swiper {
+    height: 391px;
+  }
+
+  .btn-group {
+    height: 50px;
+    width: 180px;
+  }
+
+  body .btn {
+    height: 50px;
+  }
+
+  .destinasi-container{
+    padding: 50px;
+  }
+
+  #umrah-title1{
+    font-size: 56px;
+    line-height: 90%;
+  }
+
+  #umrah-title2{
+    font-size: 40px;
+    line-height: 90%;
+  }
+
+  .umrah-detail {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .umrah-line1 {
+    height: 0;
+    width: 0;
+    border: 0px;
+  }
+
+  .testi1, .testi2 {
+    flex-direction: column;
+  }
+
+  .ct1 {
+    font-size: 48px;
+  }
+
+  .ct2 {
+    font-size: 38px;
+  }
+
+  .contact-btn {
+    width: 350px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  .footer-container {
+    padding-top: 60px;
+  }
+
+  #footer-logo {
+    height: auto;
+  }
+
+  #footer-text {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
+  #paket-title {
+    text-align: center;
+  }
 
+  .paket-div1{
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .paket-box {
+    height: 200px;
+    width: 250px;
+  }
+
+  #paket-harga{
+    margin-top: 40px;
+  }
+
+  .AU-benefit {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 25px;
+  }
+
+  .destinasi-container {
+    margin-top: 0;
+  }
+
+  .benefit-line1{
+    border: 1px solid white;
+  }
+
+  .AboutUs-container {
+    height: auto;
+  }
+
+  .AU-container {
+    height: 600px;
+  }
+
+  .AU-company {
+    flex-direction: column;
+    padding-top: 150px;
+  }
+
+  #AU-company-logo {
+    width: auto;
+    height: 200px;
+  }
+
+  .swiper {
+    height: 290px;
+  }
+
+  .testi-title {
+    font-size: 48px;
+  }
+
+  .ct1 {
+    font-size: 36px;
+  }
+
+  .ct2 {
+    font-size: 28px;
+  }
+
+  .contact-btn {
+    width: 250px;
+    height: 60px;
+    font-size: 24px;
+  } 
+
+  .Contact {
+    height: auto;
+    padding: 100px 0px 100px 0px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 576px) {
@@ -794,6 +1068,82 @@ li {
     width: 280px;
     font-size: 22px;
   }
+
+  .company-profile {
+    width: 360px;
+  }
+
+  #profile-name {
+    font-size: 24px;
+  }
+
+  #profile-subname {
+    font-size: 22px;
+  }
+
+  #profile-desc {
+    font-size: 16px;
+    width: 360px;
+  }
+
+  .AU-container {
+    height: 450px;
+  }
+
+  .AU-company {
+    padding-top: 80px;
+  }
+
+  #AU-company-logo {
+    height: 180px;
+  }
+
+  .AU-benefit, .benefit {
+    gap: 5px;
+  }
+
+  .destinasi-title {
+    font-size: 32px;
+  }
+
+  body .btn {
+    font-size: 16px;
+  }
+
+  .btn-group {
+    width: 160px;
+  }
+
+  #detail-title {
+    font-size: 20px;
+  }
+
+  #detail-desc {
+    font-size: 16px;
+  }
+
+  .rute-line {
+    max-width: 100%;
+    top: 65px;
+  }
+
+  .testi-title {
+    font-size: 32px;
+  }
+
+  .ct1 {
+    font-size: 30px;
+  }
+
+  .ct2 {
+    font-size: 22px;
+  }
+
+  .contact-btn {
+    width: 220px;
+    height: 60px;
+    font-size: 20px;
+  } 
 }
 
 @media (max-width: 400px) {
@@ -814,5 +1164,103 @@ li {
     height: 60px;
     width: 250px;
     font-size: 22px;
+  }
+
+  #paket-title {
+    font-size: 24px;
+  }
+
+  .AU-benefit {
+    padding-top: 25px;
+  }
+
+  .benefit-box {
+    flex-direction: column;
+  }
+
+  #benefit-title {
+    width: 100%;
+  }
+
+  .benefit-text {
+    padding: 10px 0px 10px 0px;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .company-profile {
+    width: 280px;
+  }
+
+  #profile-name {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #profile-subname {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #profile-desc {
+    width: 280px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .benefit-box {
+    gap: 0;
+  }
+
+  .benefit-text {
+    justify-content: center;
+    padding: 10px 0px 0px 0px;
+  }
+
+  #benefit-logo {
+    padding-top: 10px;
+  }
+
+  .destinasi-title {
+    font-size: 24px;
+  }
+
+  .inex-div {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .umrah-line {
+    height: 0;
+    width: 0;
+    border: 0;
+  }
+
+  .bandara {
+    width: 280px;
+  }
+
+  .rute-line {
+    max-width: 280px;
+  }
+
+  .rute-dot {
+    left: 38px;
+  }
+
+  .rute-dot2 {
+    left: 105px;
+  }
+
+  .rute-dot3 {
+    left: 168px;
+  }
+
+  .rute-dot4 {
+    left: 230px;
+  }
+
+  .testi1, .testi2, .testi-div {
+    gap: 20px;
   }
 }

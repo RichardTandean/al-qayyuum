@@ -1,15 +1,45 @@
 'use client'
-// Destinasi.js
 
-import React, { useState } from "react";
-import DestinasiCarousel from "./Destinasi_carousel";
+
+import React, { useState, useEffect, useRef } from "react";
+import SwiperCore, { Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Navigation, Pagination } from 'swiper/modules';
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function Destinasi() {
-  const [activeMenu, setActiveMenu] = useState("Umrah");
 
-  const handleMenuChange = (menu) => {
-    setActiveMenu(menu);
-  };
+  const [selectedMenu, setSelectedMenu] = useState("Umrah");
+
+  useEffect(() => {
+    switch (selectedMenu){
+      case "Umrah":
+        setSelectedMenu("Umrah");
+        break;
+      case "Haji":
+        setSelectedMenu("Haji");
+        break;
+      case "Turki":
+        setSelectedMenu("Turki");
+        break;
+      case "Jepang":
+        setSelectedMenu("Jepang");
+        break;
+      case "Eropa":
+        setSelectedMenu("Eropa");
+        break;
+    }
+  }, [selectedMenu])
+
+  const carousel = {
+    Umrah:['image/logo.png', 'service'],
+    Haji:['logo1', 'service'],
+    Turki:["logo2", "service"],
+    Jepang:["logo3", "service"],
+    Eropa:["logo4", "service"]
+  }
 
   return (
     <div className="container destinasi-container" id="Destinasi">
@@ -28,34 +58,46 @@ export default function Destinasi() {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <a className="dropdown-item" onClick={() => handleMenuChange("Umrah")}>
+              <a className="dropdown-item" onClick={() => setSelectedMenu("Umrah")}>
                 Umrah
               </a>
             </li>
             <li>
-              <a className="dropdown-item" onClick={() => handleMenuChange("Haji")}>
+              <a className="dropdown-item" onClick={() => setSelectedMenu("Haji")}>
                 Haji
               </a>
             </li>
             <li>
-              <a className="dropdown-item" onClick={() => handleMenuChange("Turki")}>
+              <a className="dropdown-item" onClick={() => setSelectedMenu("Turki")}>
                 Turki
               </a>
             </li>
             <li>
-              <a className="dropdown-item" onClick={() => handleMenuChange("Jepang")}>
+              <a className="dropdown-item" onClick={() => setSelectedMenu("Jepang")}>
                 Jepang
               </a>
             </li>
             <li>
-              <a className="dropdown-item" onClick={() => handleMenuChange("Eropa")}>
+              <a className="dropdown-item" onClick={() => setSelectedMenu("Eropa")}>
                 Eropa
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <DestinasiCarousel activeMenu={activeMenu} />
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        className="mySwiper"
+      >
+        {carousel[selectedMenu].map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} style={{maxHeight:'100%'}}/>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
